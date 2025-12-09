@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const pokemonRoutes = require("./api/Pokemons/routes");
-
+const userRoutes = require("./api/users/routes");
 require("dotenv").config();
 
 const app = express();
@@ -24,6 +24,8 @@ app.get("/api/test", (req, res) => {
 
 //utilisation des routes API
 app.use("/api/pokemons", pokemonRoutes);
+
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
