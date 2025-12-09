@@ -21,7 +21,6 @@ const pokemonSchema = new mongoose.Schema(
     types: { type: [{ type: String, required: true }], required: true },
     height: { type: Number, required: true, min: 0 },
     weight: { type: Number, required: true, min: 0 },
-    description: { type: String, maxlength: 500 },
     sprites: { back_default: String, front_default: String },
   },
   {
@@ -30,3 +29,4 @@ const pokemonSchema = new mongoose.Schema(
 );
 
 const Pokemon = mongoose.model("Pokemon", pokemonSchema);
+module.exports = Pokemon;
