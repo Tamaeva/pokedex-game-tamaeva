@@ -25,7 +25,6 @@ app.get("/api/test", (req, res) => {
   res.json({ message: "API Pokédex fonctionne !" });
 });
 
-app.get("/api/pokemon", (req, res) => {});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Serveur démarré sur http://localhost:${PORT}`);
