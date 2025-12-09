@@ -70,9 +70,11 @@ async function fetchAndSavePokemon(url) {
       defense:
         pokemonData.stats.find((s) => s.stat.name == "defense")?.base_stat || 0,
       spAtk:
-        pokemonData.stats.find((s) => s.stat.name == "spAtk")?.base_stat || 0,
+        pokemonData.stats.find((s) => s.stat.name == "special-attack")
+          ?.base_stat || 0,
       spDef:
-        pokemonData.stats.find((s) => s.stat.name == "spDef")?.base_stat || 0,
+        pokemonData.stats.find((s) => s.stat.name == "special-defense")
+          ?.base_stat || 0,
       speed: pokemonData.stats.find((s) => s.stat.name == "speed")?.base_stat,
     };
     sprites = {
