@@ -56,5 +56,21 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
     },
   });
 });
+
+//POST logout(déconnexion)
+router.post("/logout", (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+
+    req.session.destroy((err) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      res.json({ success: true, message: "Déconnexion réussie ! " });
+    });
+  });
+});
 //=============Fin des routes======
 module.exports = router;

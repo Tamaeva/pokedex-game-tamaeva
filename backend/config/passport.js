@@ -2,10 +2,11 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const Users = require("../api/users/models");
 
+//création de la stratégie local que passport va utiliser pour authentifier l'utilisateur
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
-      const user = await User.findOne({ username });
+      const user = await Users.findOne({ username });
 
       if (!user) throw new Error("User not found");
 
@@ -26,7 +27,7 @@ passport.serializeUser((user, done) => {
 //récupérer depuis la session
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id).select("-password");
+    const user = await Users.findById(id).select("-password");
     done(null, user);
   } catch (error) {
     done(error);

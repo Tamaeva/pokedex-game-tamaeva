@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const session = require("express-session");
-const MongoStore = require("connect-mongo");
+const { default: MongoStore } = require("connect-mongo");
 const passport = require("passport");
 
 const pokemonRoutes = require("./api/Pokemons/routes");
@@ -14,24 +14,34 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-require("./config/passport");
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
-    cookie: { maxAge: 604800, httpOnly: true, secure: false },
-  })
-);
-app.use(passport.initialise());
-app.use(passport.session());
 
 // Connexion MongoDB
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connecté"))
   .catch((err) => console.error("Erreur MongoDB:", err));
+
+require("./config/passport");
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({
+      mongoUrl: process.env.MONGODB_URI,
+      touchAfter: 24 * 3600,
+    }),
+    cookie: { maxAge: 604800, httpOnly: true, secure: false },
+  })
+);
+
+console.log("session configurée");
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+console.log("passport initialisé");
 
 //utilisation des routes API
 app.use("/api/pokemons", pokemonRoutes);
