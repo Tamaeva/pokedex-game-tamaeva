@@ -1,4 +1,7 @@
 const express = require("express");
+const passport = require("passport");
+
+const LocalStrategy = require("passport-local");
 const Users = require("./models");
 
 //passport et express-validator à faire
@@ -44,28 +47,14 @@ router.post("/register", async (req, res) => {
 });
 
 //POST login (Connexion)
-router.post("/login", async (req, res) => {
-  try {
-    const { username, password } = req.body;
-    if (!username | !password) {
-      return res.status(400).json(res.message);
-    }
-
-    const user = await Users.findOne({ username: username });
-    if (!user) {
-      return res.status(404).json(res.message);
-    }
-    const isValid = await user.comparePassword(password);
-    if (!isValid) {
-      return res.status(401).json(res.message);
-    }
-    return res.status(200).json({
-      success: true,
-      message: `Vous êtes connecté en tant que : ${username}`,
-    });
-  } catch (error) {
-    error.json(error.message);
-  }
+router.post("/login", passport.authenticate("local"), (req, res) => {
+  res.json({
+    success: true,
+    user: {
+      id: req.user._id,
+      username: req.user.username,
+    },
+  });
 });
 //=============Fin des routes======
 module.exports = router;
