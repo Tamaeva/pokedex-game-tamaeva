@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/allPokemons", async (req, res) => {
   try {
     const pokemons = await Pokemon.find();
-    res.json(pokemons);
+    res.json({ pokemons });
   } catch (error) {
     console.error(error.message);
   }

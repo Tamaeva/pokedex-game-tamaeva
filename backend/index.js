@@ -17,11 +17,6 @@ mongoose
   .then(() => console.log("MongoDB connecté"))
   .catch((err) => console.error("Erreur MongoDB:", err));
 
-// Route test
-app.get("/api/test", (req, res) => {
-  res.json({ message: "API Pokédex fonctionne !" });
-});
-
 //utilisation des routes API
 app.use("/api/pokemons", pokemonRoutes);
 
