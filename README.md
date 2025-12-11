@@ -22,6 +22,8 @@ Le professeur CHEN vous remettra un des trois starters de cette gen, votre objec
 
 - [Landing Page Visuel](docs/LANDINGPAGE.md)
 - [Login Page Visuel ](docs/LOGINPAGE.md)
+- [Pokédex Page Visuel](docs/POKEDEXPAGE.md)
+- Fiche d'information de l'utilisateur (à venir)
 
 ## Fonctionnalités
 
@@ -116,7 +118,7 @@ npm run dev
 5. **Lancer un combat** : Affronter un pokémon sauvage aléatoire
 6. **Voir ses stats** : Victoire, défaite, ratio
 
-### Pokémon
+### API Routes
 
 | Méthode | Endpoint                   | Description            |
 | ------- | -------------------------- | ---------------------- |
@@ -127,12 +129,10 @@ npm run dev
 
 ### Utilisateurs
 
-| Méthode | Endpoint                   | Description                 |
-| ------- | -------------------------- | --------------------------- |
-| POST    | `/api/users/register`      | Inscription                 |
-| POST    | `/api/users/login`         | Connexion                   |
-| POST    | `/api/users/logout`        | Déconnexion                 |
-| GET     | `/api/users/profile/: id`  | Profil utilisateur          |
-| POST    | `/api/users/starter`       | Choisir le starter          |
-| POST    | `/api/users/battle-result` | Enregistrer résultat combat |
-| GET     | `/api/users/battles/: id`  | Statistiques de combat      |
+| Méthode | Endpoint                  | Description        |
+| ------- | ------------------------- | ------------------ |
+| POST    | `/api/users/register`     | Inscription        |
+| POST    | `/api/users/login`        | Connexion          |
+| POST    | `/api/users/logout`       | Déconnexion        |
+| GET     | `/api/users/profile/: id` | Profil utilisateur |
+| POST    | `/api/users/starter`      | Choisir le starter |

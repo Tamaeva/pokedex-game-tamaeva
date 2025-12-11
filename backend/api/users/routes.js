@@ -13,9 +13,9 @@ const router = express.Router();
 //POST register (inscription)
 router.post("/register", async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { username, password, starter } = req.body;
 
-    if (!password || !username) {
+    if (!password || !username || !starter) {
       return res
         .status(400)
         .json({ message: "username ou password manquants" });
@@ -29,6 +29,7 @@ router.post("/register", async (req, res) => {
     const User = new Users({
       username: username,
       password: password,
+      starter: starter,
     });
 
     await User.save();
@@ -37,6 +38,7 @@ router.post("/register", async (req, res) => {
       user: {
         id: User._id,
         username: User.username,
+        starter: User.starter,
         createdAt: User.createdAt,
       },
     });
@@ -53,6 +55,7 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
     user: {
       id: req.user._id,
       username: req.user.username,
+      starter: req.user.starter,
     },
   });
 });
