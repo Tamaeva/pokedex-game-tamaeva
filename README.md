@@ -3,13 +3,13 @@
 ## Table des matières
 
 - [Introduction](#Introduction)
+- [Visuels](#visuels)
 - [Fonctionnalités](#fonctionnalités)
 - [Technologies utilisées](#technologies-utilisées)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Utilisation](#utilisation)
 - [API Routes](#api-routes)
-- [Visuels](#visuels)
 - [Auteur](#auteur)
 
 ## Introduction
@@ -17,6 +17,11 @@
 Jeu Pokédex interactif avec système d'authentification, basé sur la 1ère génération. Ce jeu permettra aux utilisateurs de redécouvrir les pokémons de la première génération dans toute leur splendeur.
 
 Le professeur CHEN vous remettra un des trois starters de cette gen, votre objectif sera ensuite de tous les attraper.
+
+### Visuels
+
+- [Landing Page Visuel](docs/LANDINGPAGE.md)
+- [Login Page Visuel ](docs/LOGINPAGE.md)
 
 ## Fonctionnalités
 
@@ -131,8 +136,3 @@ npm run dev
 | POST    | `/api/users/starter`       | Choisir le starter          |
 | POST    | `/api/users/battle-result` | Enregistrer résultat combat |
 | GET     | `/api/users/battles/: id`  | Statistiques de combat      |
-
-### Visuels
-
-- [Landing Page Visuel](docs/LANDINGPAGE.md)
-- [Login Page Visuel ](docs/LOGINPAGE.md)
