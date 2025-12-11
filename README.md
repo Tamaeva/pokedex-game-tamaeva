@@ -9,7 +9,7 @@
 - [Configuration](#configuration)
 - [Utilisation](#utilisation)
 - [API Routes](#api-routes)
-- [Screenshots](#screenshots)
+- [Visuels](#visuels)
 - [Auteur](#auteur)
 
 ## Introduction
@@ -131,3 +131,8 @@ npm run dev
 | POST    | `/api/users/starter`       | Choisir le starter          |
 | POST    | `/api/users/battle-result` | Enregistrer résultat combat |
 | GET     | `/api/users/battles/: id`  | Statistiques de combat      |
+
+### Visuels
+
+- [Landing Page Visuel](docs/LANDINGPAGE.md)
+- [Login Page Visuel ](docs/LOGINPAGE.md)
