@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
   try {
     const { username, password, starter } = req.body;
 
-    if (!password || !username || !starter) {
+    if (!password || !username) {
       return res
         .status(400)
         .json({ message: "username ou password manquants" });

@@ -32,7 +32,7 @@ router.get("/:id", async (req, res) => {
     const pokemon = await Pokemon.findOne({ pokedexId: pokemonId });
 
     if (!pokemon) {
-      res.status(404).json({ message: "Pokémon non trouvé." });
+      return res.status(404).json({ message: "Pokémon non trouvé." });
     }
     res.json(pokemon);
   } catch (error) {
@@ -46,7 +46,7 @@ router.get("/type/:typeN", async (req, res) => {
   const pokemon = await Pokemon.find({ types: typePokemon });
 
   if (!pokemon) {
-    res.status(404).json({ message: "Ce type n'existe pas " });
+    return res.status(404).json({ message: "Ce type n'existe pas " });
   }
   res.json(pokemon);
 });

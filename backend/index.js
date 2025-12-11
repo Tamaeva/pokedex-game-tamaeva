@@ -32,7 +32,7 @@ app.use(
       mongoUrl: process.env.MONGODB_URI,
       touchAfter: 24 * 3600,
     }),
-    cookie: { maxAge: 604800, httpOnly: true, secure: false },
+    cookie: { maxAge: 604800000, httpOnly: true, secure: false },
   })
 );
 
