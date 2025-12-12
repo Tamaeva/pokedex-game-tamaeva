@@ -1,0 +1,25 @@
+.choixStarter {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+  margin-top: 3rem;
+}
+
+.grow-custom {
+  transform: scale(2.5);
+}
+
+.Image {
+  position: relative !important;
+}
+.textBox {
+  position: relative !important;
+  z-index: 1 !important;
+  background-color: var(--blockFill) !important;
+  border: solid;
+  border-color: var(--blockBorder) !important;
+  padding: 1rem;
+  max-width: 50rem;
+  border-radius: 20px;
+  color: black;
+  margin-top: -12rem;
+}

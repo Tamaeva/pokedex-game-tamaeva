@@ -1,0 +1,4 @@
+.customFooter {
+  background-color: var(--navBar) !important;
+  color: var(--secondary) !important;
+}

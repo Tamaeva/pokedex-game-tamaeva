@@ -11,6 +11,29 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary: #1e1e1e;
+  --secondary: #ffffff;
+  --fontColorBlock: #000000;
+  --buttonBorder: #dc3545;
+  --buttonFill: #f7e4e4;
+  --navBar: #d13838;
+  --blockFill: #f7e4e4;
+  --blockBorder: #ac7373;
+  --starterBorderBlockGreen: #207538;
+  --starterFillBlockGreen: #299447;
+  --starterFillButtonGreen: #3ed869;
+  --starterBorderBlockRed: #752020;
+  --starterFillBlockRed: #942929;
+  --starterFillButtonRed: #d83e3e;
+  --starterBorderBlockBlue: #202075;
+  --starterFillBlockBlue: #452994;
+  --starterFillButtonBlue: #643ed8;
+  --genreFillGreen: #d6f0e8;
+  --genreFillRed: #f0d6d6;
+  --searchBarFill: #d9d9d9;
+  --searchBarBorder: #5a5a5a;
+  --pokemonBox: #d9d9d9;
 }
 
 a {

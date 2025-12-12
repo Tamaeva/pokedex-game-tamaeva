@@ -1,0 +1,7 @@
+.customBackground {
+  background-color: var(--primary);
+}
+
+.customText {
+  color: var(--secondary);
+}
