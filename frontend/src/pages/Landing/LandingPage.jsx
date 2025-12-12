@@ -1,5 +1,6 @@
 import ProfesseurIcon from "../../assets/Ressources/ProfesseurChen";
 import "./Landing.css";
+import StarterChoice from "../../components/Starter/StarterChoice";
 
 function Landing() {
   return (
@@ -23,7 +24,7 @@ function Landing() {
           reste que 3, mais tu peux en prendre un ! Choisis !
         </p>
       </div>
-      <h2 className="choixStarter">CHOIX DU STARTER</h2>
+      <StarterChoice></StarterChoice>
     </div>
   );
 }

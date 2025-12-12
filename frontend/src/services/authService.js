@@ -9,14 +9,14 @@ const AuthService = {
     return (await Response).data;
   },
   login: async (Username, Password) => {
-    const Response = Api.post("/user/login", {
+    const Response = Api.post("/userw/login", {
       username: Username,
       password: Password,
     });
     return (await Response).data;
   },
   logout: async () => {
-    const Response = Api.post("/user/lout");
+    const Response = Api.post("/users/logout");
     return (await Response).data;
   },
 };

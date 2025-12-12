@@ -1,0 +1,41 @@
+/* Carte du starter */
+.starter-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background-color: var(--primary) !important;
+  color: var(--secondary) !important;
+}
+
+.starter-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Image du Pokémon */
+.starter-image {
+  height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.starter-card:hover .starter-image {
+  transform: scale(1.1);
+}
+
+/* Numéro du Pokédex */
+.pokedex-number {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .starter-image {
+    height: 150px;
+  }
+
+  .card-image-container {
+    padding: 1.5rem 1rem 0.5rem;
+  }
+}
