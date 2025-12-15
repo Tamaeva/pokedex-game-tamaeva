@@ -98,7 +98,7 @@ Ce projet utilise principalement :
 
 _Note : pensez à vérifier que Node.js et npm sont bien installés sur votre machine._
 
-**4. Configuration**
+# Configuration
 
 Créer un fichier `.env` dans le dossier `backend/`:
 
@@ -108,14 +108,14 @@ MONGODB_URI=mongodb://localhost:27017/pokedex-game
 SESSION_SECRET=votre-tres-tres-longue-phrase-secrete
 ```
 
-**5. Peupler la base de données**
+**1. Peupler la base de données**
 
 ```bash
 cd backend
 npm run seed
 ```
 
-**6. Lancer l'application**
+**2. Lancer l'application**
 **Terminal 1 (Backend)**
 
 ```bash
@@ -135,9 +135,9 @@ npm run dev
 1. **Créer un compte** : S'inscrire avec username + password
 2. **Choisir son starter** : Bulbizarre, Carapuce, Salamèche
 3. **Explorer le Pokédex** : Découvrer ou redécouvrer les différentes caractéristique des 151 premiers Pokémons
-4. **Filtrer par type** : Boutons Plante, Eau, Feu, etc...
-5. **Lancer un combat** : Affronter un pokémon sauvage aléatoire
-6. **Voir ses stats** : Victoire, défaite, ratio
+4. **Filtrer par type** : Boutons Plante, Eau, Feu, etc... (pas encore implémenter)
+5. **Lancer un combat** : Affronter un pokémon sauvage aléatoire (pas encore implémenter)
+6. **Voir ses stats** : Victoire, défaite, ratio (pas encore implémenter)
 
 ### API Routes
 
@@ -150,10 +150,8 @@ npm run dev
 
 ### Utilisateurs
 
-| Méthode | Endpoint                  | Description        |
-| ------- | ------------------------- | ------------------ |
-| POST    | `/api/users/register`     | Inscription        |
-| POST    | `/api/users/login`        | Connexion          |
-| POST    | `/api/users/logout`       | Déconnexion        |
-| GET     | `/api/users/profile/: id` | Profil utilisateur |
-| POST    | `/api/users/starter`      | Choisir le starter |
+| Méthode | Endpoint              | Description |
+| ------- | --------------------- | ----------- |
+| POST    | `/api/users/register` | Inscription |
+| POST    | `/api/users/login`    | Connexion   |
+| POST    | `/api/users/logout`   | Déconnexion |
