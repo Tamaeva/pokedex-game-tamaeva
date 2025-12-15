@@ -1,8 +1,10 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 import { useState } from "react";
 
 import AuthService from "../../services/authService";
 import { useNavigate } from "react-router-dom";
+
+import { useAuth } from "../../context/AuthContext";
 
 function SignInForm(data) {
   const genre = data.genre;
@@ -11,11 +13,13 @@ function SignInForm(data) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [confirmPassword, setConfirmPassword] = useState(""); // Confirmation
-  const [error, setError] = useState(""); // Message d'erreur
-  const [loading, setLoading] = useState(false); // État de chargement
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate(); // Hook de navigation
+  const navigate = useNavigate();
+
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,14 +48,8 @@ function SignInForm(data) {
     setLoading(true);
 
     try {
-      const response = await AuthService.register(
-        username,
-        password,
-        starter,
-        genre
-      );
-      console.log("inscription réussie ", response);
-
+      await AuthService.register(username, password, starter, genre);
+      await login(username, password);
       navigate("/profile", { state: { username, genre, starter } });
     } catch (error) {
       console.error(error);
@@ -64,7 +62,6 @@ function SignInForm(data) {
     }
   };
 
-  console.log(data);
   return (
     <div className="container d-flex flex-column align-items-center justify-content-center ">
       <div className=" text-decoration-underline">

@@ -12,6 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --avatarFillBox: #585858;
+  --profileFillBox: #393939;
   --primary: #1e1e1e;
   --secondary: #ffffff;
   --fontColorBlock: #000000;

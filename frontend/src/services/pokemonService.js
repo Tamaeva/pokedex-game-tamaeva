@@ -3,7 +3,7 @@ import Api from "./api";
 const PokemonService = {
   getAllPokemon: async () => {
     const Response = Api.get("/pokemons/allPokemons");
-    return Response.data.pokemons;
+    return (await Response).data.pokemons;
   },
   getPokemonById: async (Id) => {
     const Response = Api.get(`pokemons/${Id}`);

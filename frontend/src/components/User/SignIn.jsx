@@ -3,7 +3,7 @@ import SignInForm from "./SignInForm";
 function SignIn(data) {
   const starterName = data.starter.selected;
   const genreName = data.genre;
-  console.log(data);
+
   return (
     <div className="container">
       <div className="container dialogBox ">

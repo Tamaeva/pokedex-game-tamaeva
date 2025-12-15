@@ -34,14 +34,26 @@ router.post("/register", async (req, res) => {
     });
 
     await User.save();
-    res.status(201).json({
-      success: true,
-      user: {
-        id: User._id,
-        username: User.username,
-        starter: User.starter,
-        createdAt: User.createdAt,
-      },
+    req.login(User, (err) => {
+      if (err) {
+        console.error("Erreur lors de la connexion automatique:", err);
+        return res.status(500).json({
+          message: "User créé mais erreur de connexion",
+        });
+      }
+
+      // User connecté et session créée !
+      res.status(201).json({
+        success: true,
+        message: "Inscription réussie et connecté",
+        user: {
+          id: User._id,
+          username: User.username,
+          starter: User.starter,
+          genre: User.genre,
+          createdAt: User.createdAt,
+        },
+      });
     });
   } catch (error) {
     console.error(error.message);

@@ -78,8 +78,25 @@ cd backend
 npm install
 ```
 
-**3. Installer les dépendance frontend**
-à venir...
+**3. Installer les dépendances frontend**
+
+Rendez-vous dans le dossier `frontend` puis installez les dépendances nécessaires :
+
+```bash
+cd frontend
+npm install
+```
+
+Ce projet utilise principalement :
+
+- **React** pour construire l’interface utilisateur
+- **React Router** pour la navigation
+- **Bootstrap** et **React-Bootstrap** pour le style et les composants visuels
+- **Axios** pour les requêtes HTTP
+
+> Si vous avez un problème avec les dépendances, supprimez éventuellement le dossier `node_modules` puis relancez `npm install`.
+
+_Note : pensez à vérifier que Node.js et npm sont bien installés sur votre machine._
 
 **4. Configuration**
 
@@ -107,7 +124,11 @@ npm run dev
 ```
 
 **Terminal 2 (Frontend)**
-à venir...
+
+```bash
+cd backend
+npm run dev
+```
 
 ## Utilisation
 
