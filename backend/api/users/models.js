@@ -17,8 +17,13 @@ const usersSchema = new mongoose.Schema({
   },
   starter: {
     type: String,
-    enum: ["Bulbizarre", "Carapuce", "Salamèche"],
-    default: "Bulbizarre",
+    enum: ["bulbasaur", "squirtle", "charmander"],
+    default: "bulasaur",
+  },
+  genre: {
+    type: String,
+    enum: ["fille", "garçon"],
+    default: "fille",
   },
   role: {
     type: String,

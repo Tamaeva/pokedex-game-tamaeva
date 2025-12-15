@@ -11,7 +11,7 @@
   transform: translateY(-10px);
 }
 
-/* Image du Pokémon */
+/* Pokéball Image */
 .starter-image {
   height: 200px;
   object-fit: contain;
@@ -36,6 +36,6 @@
   }
 
   .card-image-container {
-    padding: 1.5rem 1rem 0.5rem;
+    padding: 0rem 1rem 0.5rem;
   }
 }

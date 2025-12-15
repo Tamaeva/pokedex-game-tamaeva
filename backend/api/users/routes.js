@@ -13,7 +13,7 @@ const router = express.Router();
 //POST register (inscription)
 router.post("/register", async (req, res) => {
   try {
-    const { username, password, starter } = req.body;
+    const { username, password, starter, genre } = req.body;
 
     if (!password || !username) {
       return res
@@ -30,6 +30,7 @@ router.post("/register", async (req, res) => {
       username: username,
       password: password,
       starter: starter,
+      genre: genre,
     });
 
     await User.save();
@@ -56,6 +57,7 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
       id: req.user._id,
       username: req.user.username,
       starter: req.user.starter,
+      genre: req.user.genre,
     },
   });
 });

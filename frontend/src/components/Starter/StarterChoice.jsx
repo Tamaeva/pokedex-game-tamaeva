@@ -50,7 +50,7 @@ function StarterChoice() {
         <Alert variant="danger">
           <Alert.Heading>Erreur</Alert.Heading>
           <p className="mt-3">{errors}</p>
-          <button className="btn btn-secondary" onClick={loadStarters}>
+          <button className="btn btn-secondary" onClick={() => loadStarters()}>
             Réessayer
           </button>
         </Alert>
@@ -68,9 +68,9 @@ function StarterChoice() {
       </h2>
       <div className="trait"></div>
       <Container className="py-3 ">
-        <Row className="justify-content-center">
+        <Row className="justify-content-center g-0">
           {starters.map((starter) => (
-            <Col xs={12} sm={6} md={4} key={starter.pokedexId}>
+            <Col xs={6} sm={6} md={4} key={starter.pokedexId}>
               <StarterCard pokemon={starter} onSelect={handleSelectStarter} />
             </Col>
           ))}

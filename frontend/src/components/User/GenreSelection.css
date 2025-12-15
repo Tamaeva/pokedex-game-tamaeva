@@ -1,0 +1,59 @@
+.dialogBox {
+  position: relative !important;
+  z-index: 1 !important;
+  background-color: var(--blockFill) !important;
+  border: solid;
+  border-color: var(--blockBorder) !important;
+  padding: 1rem;
+  max-width: 50rem;
+  border-radius: 20px;
+  color: black;
+  margin-top: 1rem;
+}
+
+.genre-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.genre-card:hover {
+  transform: translateY(-10px);
+}
+
+.genre-col {
+  transition: all 0.5s ease;
+  overflow: hidden;
+  height: 400px; /* Garde la hauteur fixe */
+}
+
+.genre-col.selected {
+  flex: 1 0 100% !important;
+  max-width: 100% !important;
+  /* Pas de changement de hauteur */
+}
+
+.genre-col.hidden {
+  flex: 0 0 0% !important;
+  max-width: 0% !important;
+  width: 0 !important;
+  opacity: 0;
+  padding: 0 !important;
+  /* Garde la même hauteur, réduit seulement la largeur */
+}
+
+/* Animation de l'image sélectionnée - scale horizontal uniquement */
+.genre-card.selected {
+  animation: celebrate 0.5s ease;
+}
+
+@keyframes celebrate {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.05);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

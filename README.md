@@ -23,7 +23,7 @@ Le professeur CHEN vous remettra un des trois starters de cette gen, votre objec
 - [Landing Page Visuel](docs/LANDINGPAGE.md)
 - [Login Page Visuel ](docs/LOGINPAGE.md)
 - [Pokédex Page Visuel](docs/POKEDEXPAGE.md)
-- Fiche d'information de l'utilisateur (à venir)
+- [Profile Page Visuel](docs/PROFILEPAGE.md)
 
 ## Fonctionnalités
 
@@ -86,7 +86,7 @@ npm install
 Créer un fichier `.env` dans le dossier `backend/`:
 
 ```env
-PORT=VOTREPORT
+PORT=5000
 MONGODB_URI=mongodb://localhost:27017/pokedex-game
 SESSION_SECRET=votre-tres-tres-longue-phrase-secrete
 ```

@@ -17,6 +17,16 @@
   margin-right: 15rem;
 }
 
+.trait {
+  content: "";
+  position: relative;
+  bottom: 0rem;
+  width: calc(100% - 1rem);
+  margin-left: 0.5rem;
+  height: 2px;
+  background-color: var(--secondary);
+}
+
 @media (max-width: 576px) {
   .brand-name {
     height: 150px;
